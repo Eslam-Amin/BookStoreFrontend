@@ -19,7 +19,7 @@ function EditBook() {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`http://localhost:8000/books/${id}`)
+        axios.get(`https://bookstorebackend-hzhl.onrender.com/books/${id}`)
             .then((res) => {
                 setTitle(res.data.title)
                 setAuthor(res.data.author)
@@ -44,7 +44,7 @@ function EditBook() {
         };
         setLoading(true);
         axios
-            .put(`http://localhost:8000/books/${id}`, data)
+            .put(`https://bookstorebackend-hzhl.onrender.com/books/${id}`, data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book Edited Successfully", { variant: "success" });
